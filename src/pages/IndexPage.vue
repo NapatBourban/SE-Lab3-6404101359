@@ -6,24 +6,32 @@
       @reset="onReset"
       class="q-gutter-md"
     >
+    <q-input
+        filled
+        v-model="name"
+        label="ชื่อสกุล *"
+        hint="ชื่อ และ ชื่อเล่น"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'กรุณากรอกชื่อ']"
+      />
       <q-input
         filled
         v-model="name"
-        label="ชื่อ สกุล *"
+        label="Your name *"
         hint="Name and surname"
         lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Please type something']"
+        :rules="[ val => val && val.length > 0 || '请输入一些内容']"
       />
 
       <q-input
         filled
         type="number"
         v-model="age"
-        label="อายุ *"
+        label="Your age *"
         lazy-rules
         :rules="[
-          val => val !== null && val !== '' || 'Please type your age',
-          val => val > 0 && val < 100 || 'Please type a real age'
+          val => val !== null && val !== '' || '请输入您的年龄',
+          val => val > 0 && val < 100 || '请输入真实年龄'
         ]"
       />
 
