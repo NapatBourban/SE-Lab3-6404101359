@@ -8,6 +8,7 @@
     >
     <q-input
         filled
+<<<<<<< HEAD
         type="number"
         v-model="age"
         label="Your age sssss *"
@@ -18,17 +19,32 @@
         ]"
       />
   
+=======
+        v-model="name"
+        label="ชื่อสกุล *"
+        hint="ชื่อ และ นนนามสกุล"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || '--กรุณากรอกชื่อ']"
+      />
       <q-input
         filled
-        type="number"
-        v-model="age"
-        label="Your age *"
+        v-model="name"
+        label="Your name *"
+        hint="Name and sssurname"
         lazy-rules
-        :rules="[
-          val => val !== null && val !== '' || '请输入您的年龄',
-          val => val > 0 && val < 100 || '请输入真实年龄'
-        ]"
+        :rules="[ val => val && val.length > 0 || '--请输入一些内容']"
       />
+
+>>>>>>> English-lang
+      <q-input
+        filled
+        v-model="name"
+        label="Your nnname *"
+        hint="Name aaand surname"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || '--请输入一些内容']"
+      />
+
 
       <q-toggle v-model="accept" label="I accept the license and terms" />
 
